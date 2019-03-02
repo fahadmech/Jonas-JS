@@ -71,7 +71,7 @@ if (johnMatchAvg > mikeMatchAvg && johnMatchAvg > marryMatchAvg) {
 
 //code challenge 3
 
-var tipCalculator = function(bill) {
+/*var tipCalculator = function(bill) {
   var tipAmount;
   if (bill < 50) {
     tipAmount = 0.2;
@@ -92,4 +92,187 @@ var tips = [
 console.log(tips);
 
 var totalValue = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(totalValue);
+console.log(totalValue); */
+
+/*// practice
+var person = {
+  firstName: "fahad",
+  lastName: "shaikh",
+  birthyear: 1990,
+  calcage: function() {
+    this.age = 2019 - this.birthyear;
+  }
+};
+
+person.calcage();
+console.log(person); */
+
+//coding challenge 4
+
+/*//my solution
+var john = {
+  fullName: "John Miller",
+  mass: 90,
+  height: 2.2,
+  BmiCalc: function() {
+    return this.mass / (this.height * this.height);
+  }
+};
+
+console.log(john.BmiCalc());
+john.Bmi = john.BmiCalc();
+console.log(john);
+
+var mike = {
+  fullName: "Mike Paul",
+  mass: 90,
+  height: 2.2,
+  BmiCalc: function() {
+    return this.mass / (this.height * this.height);
+  }
+};
+
+console.log(mike.BmiCalc());
+mike.Bmi = mike.BmiCalc();
+console.log(mike);
+
+if (john.Bmi > mike.Bmi) {
+  console.log(john.fullName + " has higher BMI of " + john.Bmi);
+} else if (john.Bmi < mike.Bmi) {
+  console.log(mike.fullName + " has higher BMI of " + mike.Bmi);
+} else {
+  console.log("Both have same BMI");
+}*/
+
+//jonas solution
+/*var john = {
+  fullName: "John Miller",
+  mass: 80,
+  height: 2.2,
+  BmiCalc: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+};
+
+var mike = {
+  fullName: "Mike Paul",
+  mass: 90,
+  height: 2.2,
+  BmiCalc: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+};
+
+if (john.BmiCalc() > mike.BmiCalc()) {
+  console.log(john.fullName + " has higher BMI of " + john.bmi);
+} else if (john.bmi < mike.bmi) {
+  console.log(mike.fullName + " has higher BMI of " + mike.bmi);
+} else {
+  console.log("Both have same BMI");
+}*/
+
+/*===============================
+// coding challenge 5
+================================*/
+
+//Farhan Bhai Solution
+/* var john = {
+  fullName: "John Smith",
+  bills: [124, 48, 268, 180, 42],
+  tipAmounts: [],
+  totalAmounts: [],
+  tipCalc: function() {
+    for (var i = 0; i < john.bills.length; i++) {
+      var bill = john.bills[i];
+      var tipPercent;
+      if (bill < 50) {
+        tipPercent = 0.2;
+      } else if (bill >= 50 && bill < 200) {
+        tipPercent = 0.15;
+      } else {
+        tipPercent = 0.1;
+      }
+      var tipvalue = tipPercent * bill;
+      john.tipAmounts.push(tipvalue);
+      john.totalAmounts.push(tipvalue + bill);
+    }
+    console.log(john.tipAmounts);
+    console.log(john.totalAmounts);
+  }
+};
+john.tipCalc(); */
+
+var john = {
+  fullName: "John Smith",
+  bills: [124, 48, 268, 180, 42],
+  tipCalc: function() {
+    this.tipAmounts = [];
+    this.totalAmounts = [];
+    for (var i = 0; i < this.bills.length; i++) {
+      var bill = this.bills[i];
+      var tipPercent;
+      if (bill < 50) {
+        tipPercent = 0.2;
+      } else if (bill >= 50 && bill < 200) {
+        tipPercent = 0.15;
+      } else {
+        tipPercent = 0.1;
+      }
+      var tipvalue = tipPercent * bill;
+      this.tipAmounts[i] = tipvalue;
+      this.totalAmounts[i] = tipvalue + bill;
+    }
+  }
+};
+
+var mark = {
+  fullName: "Mark Ponting",
+  bills: [77, 10, 110, 45],
+  tipCalc: function() {
+    this.tipAmounts = [];
+    this.totalAmounts = [];
+    for (var i = 0; i < this.bills.length; i++) {
+      var bill = this.bills[i];
+      var tipPercent;
+      if (bill < 100) {
+        tipPercent = 0.2;
+      } else if (bill >= 100 && bill < 300) {
+        tipPercent = 0.1;
+      } else {
+        tipPercent = 0.25;
+      }
+      var tipvalue = tipPercent * bill;
+      this.tipAmounts[i] = tipvalue;
+      this.totalAmounts[i] = tipvalue + bill;
+    }
+  }
+};
+
+function calcAverage(tipAmounts) {
+  var sum = 0;
+  for (var i = 0; i < tipAmounts.length; i++) {
+    sum = sum + tipAmounts[i];
+  }
+  return sum / tipAmounts.length;
+}
+
+john.tipCalc();
+mark.tipCalc();
+
+john.average = calcAverage(john.tipAmounts);
+mark.average = calcAverage(mark.tipAmounts);
+console.log(john, mark);
+
+if (john.average > mark.average) {
+  console.log(
+    john.fullName + "'s" + " family has greater tips average of " + john.average
+  );
+} else if (john.average < mark.average) {
+  console.log(
+    mark.fullName + "'s" + " family has greater tips average of " + mark.average
+  );
+} else {
+  console.log("both have same average");
+}
