@@ -1,4 +1,6 @@
-//code challenge 1
+/*===============================
+// coding challenge 1
+================================*/
 
 /* var fahadMass = 76;
 var fahadHeight = 1.7;
@@ -22,7 +24,9 @@ if (fahadBmi < faisalBmi) {
   console.log("fahad is fit");
 } */
 
-// code challenge 2
+/*===============================
+// coding challenge 2
+================================*/
 
 /* var johnMatch1, johnMatch2, johnMatch3;
 
@@ -69,7 +73,9 @@ if (johnMatchAvg > mikeMatchAvg && johnMatchAvg > marryMatchAvg) {
 
 // var score = (120 + 120 + 120) / 3; */
 
-//code challenge 3
+/*===============================
+// coding challenge 3
+================================*/
 
 /*var tipCalculator = function(bill) {
   var tipAmount;
@@ -107,7 +113,9 @@ var person = {
 person.calcage();
 console.log(person); */
 
-//coding challenge 4
+/*===============================
+// coding challenge 4
+================================*/
 
 /*//my solution
 var john = {
@@ -204,6 +212,7 @@ if (john.BmiCalc() > mike.BmiCalc()) {
 };
 john.tipCalc(); */
 
+//Jonas Solution
 var john = {
   fullName: "John Smith",
   bills: [124, 48, 268, 180, 42],
@@ -276,3 +285,7 @@ if (john.average > mark.average) {
 } else {
   console.log("both have same average");
 }
+
+/*===============================
+// coding challenge 6 => DOM Dice Game
+================================*/
